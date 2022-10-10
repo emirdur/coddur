@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Coddur • Scheme</title>
+  <style type="text/css" media="screen">
+    body {
+        background-color: beige;
+        font-family: sans-serif;
+    }
+
+    #title {
+        margin: auto;
+        font-family: sans-serif;
+    }
+
+    #editor {
+        margin: auto;
+        height: 97.5vh;
+        width: auto;
+    }
+  </style>
+</head>
+<body>
+<pre id="editor">SCHEME!
+  Here is a brief summary of the Scheme programming language (feel free to experiment around!):
+    Arithmetic: 
+      (+ num1 num2) - adds two values
+      (- num1 num2) - subtracts two values
+      (* num1 num2) - multiplies two values
+      (/ num1 num2) - divides two values
+
+      You can combine functions within each other:
+        (+ (- 3 4) (/ 1 2))
+      
+    Procedures:
+      A theoretical procedure declaration:
+        (define (name param)
+          (op param param))
+      
+      An example:
+        (define (square x)
+          (* x x))
+      
+      Note: you may have more than one parameter!
+
+    Words:
+      Quotes:
+        Either use '(param1) or (quote param1)
+
+      Selectors:
+        (first param1) - gets the first item of an element
+        (last param1) - gets the last item of an element
+        (butfirst param1) - everything but the first item of an element is returned
+        (butlast param1) - everything but the first item of an element is returned
+        (item num param1) - takes a number and returns the element found at that position
+      
+      Constructors:
+        (word param1 param2) - joins parameters as a single world
+        (sentence param1 param2) - joins parameters as a sentence 
+
+    Predicates: 
+      A function that returns true (#t) or false (#f).
+        (equal? param1 param2) - checks if the two parameters are equal
+        (member? param1 param2) - checks if param1 is contained in param2
+        (before? param1 param2) - compares param1 and param2 althabetically
+        (empty? param1) - checks if param1 contains any elements
+        (number? param1) - checks if param1 is a number
+        (boolean? param1) - checks if param1 is a boolean
+        (word? param1) - checks if param1 is a word
+        (sentence? param1) - checks if param1 is sentence
+
+      Structure of an if statement: 
+        (if (> 3 4)
+            'greater
+            'less)
+        
+      And evaluates if all elements are true. Or reads left to right and evaluates as soon as one element is true.
+
+      Structure of a cond statement:
+        (cond ((= 3 3) #t)
+              ((> 4 3) #t)
+              (else #f))
+          
+    Variables:
+      To declare a variable:
+        (define x 3)
+
+      To use let:
+        (let ((x (+ 3 1))) ...)
+    
+    Higher-Order Functions:
+      (every func1 param1) - applies func1 to param1 for every value in param1
+      (keep pred1 param1) - keeps every value of param1 that returns true for pred1
+      (accumulate func1 param1) - combines param1 with the function func1
+
+    Lambda:
+      Lambda can be thought of a function declared at an instance.
+        (lambda (x) (+ x 3))
+
+    Recursion is a repetitive process using a base case and calls to the function.   
+</pre>
+
+<script src="src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/scheme");
+</script>
+
+</body>
+</html>

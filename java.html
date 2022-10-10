@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="logo.png">
+  <title>Coddur • Java</title>
+  <style type="text/css" media="screen">
+    body {
+       background-color: beige;
+       font-family: sans-serif;
+    }
+
+    #editor {
+      margin: auto;
+      height: 97.5vh;
+      width: auto;
+    }
+
+    #title {
+        margin: auto;
+        font-family: sans-serif;
+    }
+
+    @media only screen and (max-width: 950px) {
+      #editor {
+        margin: auto;
+        width: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<!--<h1 id="title">JAVA!</h1>
+<p>Here is a brief summary of the Java programming language:</p>
+<ol>To write in-line comments, use "//" followed by the comment.</ol>
+<ol>Open with "/*" and end with "*/" to write longer comments.</ol>-->
+
+<pre id="editor">JAVA!
+  Here is a brief summary of the Java programming language (feel free to experiment around!):
+    Comments:
+      To write in-line comments, use "//" followed by the comment.
+      Open with "/*" and end with "*/" to write longer comments.
+
+      // Commented Text
+
+      /* 
+        Longer Commented Text 
+      */
+
+    Errors:
+      - compile-time: incorrect syntax (e.x. missing ;)
+      - logical: problems with code itself (e.x. addition error)
+      - run-time: no syntax error, but system detects an error (e.x. incorrect parsing of variable type)
+
+    Printing:
+      System.out.println("Hello World"); or System.out.print("Hello World");
+      Use "+"" to concatenate strings while printing.
+      Use "\"" as an escape sequence: System.out.println("Print \"Hello World\"");
+
+    Variables:
+      int - holds whole numbers
+      int x = 3;
+
+      floats - holds decimal values
+      double x = 3.00;
+
+      characters - store singular values
+      char a = 'A';
+
+      boolean - stores truth values (true or false)
+      boolean t = True;
+
+      strings - creates literal text
+      String s = "Hello World";
+
+    Math:
+      Standard Operators:
+        +, -, /, *, %
+      Math Class Operators:
+        abs(int/doube var) - takes the absolute value of a variable
+        pow(double base, double exponent) - takes the base variable and raises it to the exponent variable
+        sqrt(double var) - gives the positive value of the square root of a variable
+        random() - returns a double value from 0 inclusive to 1 exclusive *you can multiply and/or add this by a value to expand the range
+      Other:
+        If you have a declared integer type, it will round the other values down to a whole number.
+        You can use += to update a variable
+        int x += 3; // assigns x to the previous value of x + 3
+
+    Strings:
+      String s = "I am a string!";
+      String Operators:
+        String(String str) - constructs a new String object with the stored variable str 
+        length() - returns the length of the String
+        substring(int from, int to) - returns the substring from the index value of integer from inclusive to the index value of integer to exclusive
+        indexOf(String str) - returns the index of the first found substring str within the string, and returns -1 if isn't found
+        equals(String new) - returns true if String new is equal to the previous String and false otherwise
+    
+    Conditionals:
+      if (False) {
+        return "This will be returned if the parameter in the if statement is true";
+      } else if (True) {
+        return "Sadly, the above if statement ha a parameter that wasn't true, so we move on... This one returns true, so it will return this statement.";
+      } else {
+        return "If both were false, it would return this (also known as a default case";
+      }
+      *Note how if statements are stacked, e.g. if we have multiple if statements being true, it will evaluate each individual if statement; 
+       however, if we have an if statement (happens to be true) and then an else if statement, it will only evaluate the if statement.
+    
+    Loops:
+      boolean x = True;
+      while (x) {
+        return "This will return so long as the parameter in the while loop is true";
+        x = False; // we usually want to change values so that the condition is met and we can avoid an infinite loop
+      }
+      *Use these when you aren't certain how many times you want something to iterate
+
+      int y = 100;
+      for (int i = 0; i < y; i++) {
+        return "This will return 100 times!";
+      }
+      *Notice how we know how many times we want this to iterate, so we naturally use for loops when we know how many times it will iterate!
+
+    Truth Values:
+      && - and, checks if each condition is met
+      || - or, checks if one or another condition is met
+      ! - not, checks if a condition isn't met
+      DeMorgan's Law:
+      Basically negates everything and flips and and or, as well as greater/less than signs (adds an equal sign to it if it was without an equal sign before).
+
+    Classes: 
+      public class Food { //name your class something useful
+        private String ingredient1;
+        private String ingredient2; //known as instance variables
+
+        public Food(String ingredient1, String ingredient2) { //this is your constructor
+          this.ingredient1 = ingredient1;
+          this.ingredient2 = ingredient2;
+        }
+
+        public String cook(String ingredient1, String ingredient2) { //this is a method
+          return ingredient1 + " with " + ingredient2;
+        }
+
+        public static void main(String[] args) { //a tester for your code!
+          String rice = "Rice";
+          String chicken = "Chicken";
+          Food f = new Food(rice, chicken); //creates an object
+          System.out.println(f.cook());
+        }
+      }
+    
+    Arrays, ArrayLists, and 2D Arrays:
+      Arrays:
+        int[] nums = new int[3]; //creates an array with 3 empty elements
+        int[] nums2 = {0, 1, 2}; //creates an array with 3 elements with values 0, 1, and 2
+        Access a value using nums[index] and use .length to find the size of the array
+        *Indexes start from 0 and go to the length of the list - 1 and arrays are immutable, meaning you can't add elements to it
+
+      ArrayLists:
+        ArrayList<int> nums3 = new ArrayList<int>();
+        *ArrayLists are basically the same as arrays, except that they can be mutated, meaning you can delete/add elements to it
+        .size() - gets the size of the ArrayList
+        .add(int index, O object) - adds an element to the specified index
+        .get(int index) - gets the element at the specified index
+        .set(int index, O object) - changes the element at the specified index to the element
+        .remove(int index) - removes the element at the specified index
+        .clear() - removes all the elements of the ArrayList
+      
+      2D Arrays:
+        Similar to arrays, we can make 2D Arrays:
+          int[][] nums4 = new int[2][2];
+          int[][] nums5 = {{0, 1}, {2, 3}};
+        These arrays again start at 0, both vertically and horizontally; treat it as a square
+
+    Inheritance:
+      Inheritance is the idea of using subclasses and superclasses
+      extends - used in a class declaration, and inherits from another class
+      implements - keyword to include an interface
+      Polymorphism means having many classes, which are linked via inheritance
+      *The idea is that you can use methods and variables from superclasses
+
+    Recursion:
+      base condition - a condition that will basically end the recursive calls
+      Similar to for loops, recursion is a way to loop a task a certain amount of times by calling the same method
+      *Don't forget to change the value related to the base case to prevent infinite loops
+      
+    Sorting and Searching Algorithms:
+      Sequential Search - searches each element in the list until it finds the corresponding item
+      Binary Search - starts from the middle and divides the list; proceeds to go to the left or right list depending on lower or higher respectively; 
+                      only works with sorted list
+      Merge Sort - splits array into two until single elements; compares values and places them together; repeats this until merged into one list
+      Insertion Sort - splits array into sorted and unsorted part; places each element from unsorted part into corresponding spot; 
+                       repeats process till the end of the list
+      Selection Sort - finds minimum element and places it in the correct index of the list; repeats till the end of the list
+</pre>
+
+<script src="src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/java");
+</script>
+
+</body>
+</html>
